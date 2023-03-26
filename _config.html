@@ -1,0 +1,80 @@
+
+# NOTE: keep in sync with .gitignore
+# (except for dotfiles which are automatically excluded)
+exclude:
+  - node_modules
+  - scripts
+  - src
+  - vendor # rubygems in TravisCI
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - webpack.config.js
+  - README.md
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+baseurl: /docs
+
+# for computing `parent_baseurl`, which is for serving assets from outer side
+# no ending slash
+local_parent_baseurl: ""
+live_parent_baseurl: "https://fullcalendar.io"
+
+fullcalendar_org: https://github.com/fullcalendar
+fullcalendar_repo: https://github.com/fullcalendar/fullcalendar
+fullcalendar_premium_repo: https://github.com/fullcalendar/fullcalendar-workspace
+fullcalendar_react_repo: https://github.com/fullcalendar/fullcalendar-react
+fullcalendar_vue_repo: https://github.com/fullcalendar/fullcalendar-vue
+fullcalendar_angular_repo: https://github.com/fullcalendar/fullcalendar-angular
+
+# ordered by how they should appear in UI
+available_versions:
+
+  - id: v6
+    collection: docs-v6
+    is_latest: true
+
+  - id: v5
+    collection: docs-v5
+
+  - id: v4
+    collection: docs-v4
+
+  - id: v3
+    collection: docs-v3
+
+  - id: v2
+    aliased_to: v3
+
+  - id: v1
+    collection: docs-v1
+
+# `output: true` says a page should be generated for each document.
+# NOTE: if you change the permalink structure, you must also change
+# the permalinks in the _docs-*/index.md files.
+collections:
+
+  docs-v6:
+    output: true
+    permalink: /:slug
+
+  docs-v5:
+    output: true
+    permalink: /v5/:slug
+
+  docs-v4:
+    output: true
+    permalink: /v4/:slug
+
+  docs-v3:
+    output: true
+    permalink: /v3/:slug
+
+  docs-v1:
+    output: true
+    permalink: /v1/:slug
